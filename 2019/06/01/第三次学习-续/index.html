@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##第一章 内容  ##第二章 内容  ##第三章 ###3.1 内容">
+<meta name="description" content="Git学习第三节-续（两个分支）bug分支Q:假如现在的Bug你还没有解决，而上边又给你派了一个新的Bug，而这个Bug相比较现在正在苦思冥想的Bug比较容易解决。你想先解决新的Bug，可是之前的Bug还没有解决完而不能提交。怎么办? 解决方法： Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作： 1git stash  解决完bug以后，切换回这个分支">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博文">
-<meta property="og:url" content="http://yoursite.com/2019/06/01/我的第一篇博文/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/06/01/第三次学习-续/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##第一章 内容  ##第二章 内容  ##第三章 ###3.1 内容">
+<meta property="og:description" content="Git学习第三节-续（两个分支）bug分支Q:假如现在的Bug你还没有解决，而上边又给你派了一个新的Bug，而这个Bug相比较现在正在苦思冥想的Bug比较容易解决。你想先解决新的Bug，可是之前的Bug还没有解决完而不能提交。怎么办? 解决方法： Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作： 1git stash  解决完bug以后，切换回这个分支">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-01T08:58:19.652Z">
+<meta property="og:updated_time" content="2019-06-01T12:33:58.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇博文">
-<meta name="twitter:description" content="##第一章 内容  ##第二章 内容  ##第三章 ###3.1 内容">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="Git学习第三节-续（两个分支）bug分支Q:假如现在的Bug你还没有解决，而上边又给你派了一个新的Bug，而这个Bug相比较现在正在苦思冥想的Bug比较容易解决。你想先解决新的Bug，可是之前的Bug还没有解决完而不能提交。怎么办? 解决方法： Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作： 1git stash  解决完bug以后，切换回这个分支">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/01/我的第一篇博文/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/01/第三次学习-续/">
 
 
 
 
 
-  <title>我的第一篇博文 | Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/01/我的第一篇博文/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/01/第三次学习-续/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的第一篇博文</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -261,7 +261,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-01T16:53:32+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-01T20:29:04+08:00">
                 2019-06-01
               </time>
             
@@ -299,15 +299,26 @@
       
 
       
-        <p>##第一章</p>
-<p>内容</p>
-<hr>
-<p>##第二章</p>
-<p>内容</p>
-<hr>
-<p>##第三章</p>
-<p>###3.1</p>
-<p>内容</p>
+        <h2 id="Git学习第三节-续（两个分支）"><a href="#Git学习第三节-续（两个分支）" class="headerlink" title="Git学习第三节-续（两个分支）"></a>Git学习第三节-续（两个分支）</h2><h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3><p><strong>Q:假如现在的Bug你还没有解决，而上边又给你派了一个新的Bug，而这个Bug相比较现在正在苦思冥想的Bug比较容易解决。你想先解决新的Bug，可是之前的Bug还没有解决完而不能提交。怎么办?</strong></p>
+<p><strong>解决方法：</strong></p>
+<p>Git还提供了一个<code>stash</code>功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+
+<p>解决完bug以后，切换回这个分支</p>
+<p>查看保存的工作现场：<code>git stash list</code></p>
+<p>恢复工作现场：</p>
+<p>​                            方法1：<code>git stash pop</code>     //恢复的同时把stash内容也删了</p>
+<p>​                            方法2：</p>
+<p>​                           <code>git stash apply [stash标号]</code>  //恢复现场</p>
+<p>​                           <code>git  stash drop</code>//删除stash内容</p>
+<h3 id="Feature-分支"><a href="#Feature-分支" class="headerlink" title="Feature 分支"></a>Feature 分支</h3><p>这个分支和普通分支没啥区别，是一种管理分支的策略</p>
+<p>添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。</p>
+<ul>
+<li><p>开发一个新feature，最好新建一个分支；</p>
+</li>
+<li><p>如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除。</p>
+</li>
+</ul>
 
       
     </div>
@@ -332,8 +343,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/06/01/第三次学习/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -341,6 +352,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/01/git第一课/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -392,8 +407,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -408,7 +432,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -435,6 +459,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git学习第三节-续（两个分支）"><span class="nav-number">1.</span> <span class="nav-text">Git学习第三节-续（两个分支）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bug分支"><span class="nav-number">1.1.</span> <span class="nav-text">bug分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-分支"><span class="nav-number">1.2.</span> <span class="nav-text">Feature 分支</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -7,7 +7,7 @@
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TinyHttp源码剖析"><span class="toc-number">1.</span> <span class="toc-text">TinyHttp源码剖析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、-TinyHttp源码剖析预备知识——HTTP协议"><span class="toc-number">1.1.</span> <span class="toc-text">一、 TinyHttp源码剖析预备知识——HTTP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-HTTP协议概念"><span class="toc-number">1.2.</span> <span class="toc-text">1. HTTP协议概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-特点"><span class="toc-number">1.3.</span> <span class="toc-text">2. 特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-工作流程"><span class="toc-number">1.4.</span> <span class="toc-text">3. 工作流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-HTTP报文的结构"><span class="toc-number">1.5.</span> <span class="toc-text">4. HTTP报文的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-请求方法"><span class="toc-number">1.6.</span> <span class="toc-text">5. 请求方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Http与Https的区别"><span class="toc-number">1.7.</span> <span class="toc-text">6. Http与Https的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-如何理解套接字？"><span class="toc-number">1.8.</span> <span class="toc-text">7. 如何理解套接字？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket通信流程"><span class="toc-number">2.</span> <span class="toc-text">socket通信流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二、-Tinyhttp源码剖析"><span class="toc-number">2.1.</span> <span class="toc-text">二、 Tinyhttp源码剖析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-简介"><span class="toc-number">2.2.</span> <span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-流程分析"><span class="toc-number">2.3.</span> <span class="toc-text">2. 流程分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-每个函数的作用"><span class="toc-number">2.4.</span> <span class="toc-text">3. 每个函数的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-带注释的代码"><span class="toc-number">2.5.</span> <span class="toc-text">4. 带注释的代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、-思考总结"><span class="toc-number">2.6.</span> <span class="toc-text">三、 思考总结</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g3trl5f8k4j304b04bmx4.jpg"></div><div class="author-info__name text-center">Joe_Feng</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">10</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">5</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://pic1.win4000.com/wallpaper/8/565d5415d62dd.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Joe's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">个人主页</a><a class="site-page" href="/archives">文章总览</a><a class="site-page" href="/categories/项目实战">项目实战</a><a class="site-page" href="/categories/读书/">读书笔记</a><a class="site-page" href="/categories/生活杂谈">生活杂谈</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">TinyHttp源码剖析</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-03-20</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/项目实战/">项目实战</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">11.8k</span><span class="post-meta__separator">|</span><span>阅读时长: 43 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="TinyHttp源码剖析"><a href="#TinyHttp源码剖析" class="headerlink" title="TinyHttp源码剖析"></a>TinyHttp源码剖析</h3><h4 id="一、-TinyHttp源码剖析预备知识——HTTP协议"><a href="#一、-TinyHttp源码剖析预备知识——HTTP协议" class="headerlink" title="一、 TinyHttp源码剖析预备知识——HTTP协议"></a>一、 TinyHttp源码剖析预备知识——HTTP协议</h4><h4 id="1-HTTP协议概念"><a href="#1-HTTP协议概念" class="headerlink" title="1. HTTP协议概念"></a>1. HTTP协议概念</h4><p>HTTP协议，即超文本传输协议(Hypertext transfer protocol)。是一种详细规定了浏览器和万维网(WWW = World Wide Web)服务器之间互相通信的规则，通过因特网传送万维网文档的数据传送协议。</p>
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TinyHttp源码剖析"><span class="toc-number">1.</span> <span class="toc-text">TinyHttp源码剖析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、-TinyHttp源码剖析预备知识——HTTP协议"><span class="toc-number">1.1.</span> <span class="toc-text">一、 TinyHttp源码剖析预备知识——HTTP协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-HTTP协议概念"><span class="toc-number">1.2.</span> <span class="toc-text">1. HTTP协议概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-特点"><span class="toc-number">1.3.</span> <span class="toc-text">2. 特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-工作流程"><span class="toc-number">1.4.</span> <span class="toc-text">3. 工作流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-HTTP报文的结构"><span class="toc-number">1.5.</span> <span class="toc-text">4. HTTP报文的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-请求方法"><span class="toc-number">1.6.</span> <span class="toc-text">5. 请求方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Http与Https的区别"><span class="toc-number">1.7.</span> <span class="toc-text">6. Http与Https的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-如何理解套接字？"><span class="toc-number">1.8.</span> <span class="toc-text">7. 如何理解套接字？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket通信流程"><span class="toc-number">2.</span> <span class="toc-text">socket通信流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二、-Tinyhttp源码剖析"><span class="toc-number">2.1.</span> <span class="toc-text">二、 Tinyhttp源码剖析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-简介"><span class="toc-number">2.2.</span> <span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-流程分析"><span class="toc-number">2.3.</span> <span class="toc-text">2. 流程分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-每个函数的作用"><span class="toc-number">2.4.</span> <span class="toc-text">3. 每个函数的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-带注释的代码"><span class="toc-number">2.5.</span> <span class="toc-text">4. 带注释的代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、-思考总结"><span class="toc-number">2.6.</span> <span class="toc-text">三、 思考总结</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g3trl5f8k4j304b04bmx4.jpg"></div><div class="author-info__name text-center">Joe_Feng</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">10</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">5</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://pic1.win4000.com/wallpaper/8/565d5415d62dd.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Joe's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">个人主页</a><a class="site-page" href="/archives">文章总览</a><a class="site-page" href="/categories/项目实战">项目实战</a><a class="site-page" href="/categories/读书/">读书笔记</a><a class="site-page" href="/categories/生活杂谈">生活杂谈</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">TinyHttp源码剖析</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-03-20</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/项目实战/">项目实战</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">11.9k</span><span class="post-meta__separator">|</span><span>阅读时长: 43 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="TinyHttp源码剖析"><a href="#TinyHttp源码剖析" class="headerlink" title="TinyHttp源码剖析"></a>TinyHttp源码剖析</h3><h4 id="一、-TinyHttp源码剖析预备知识——HTTP协议"><a href="#一、-TinyHttp源码剖析预备知识——HTTP协议" class="headerlink" title="一、 TinyHttp源码剖析预备知识——HTTP协议"></a>一、 TinyHttp源码剖析预备知识——HTTP协议</h4><h4 id="1-HTTP协议概念"><a href="#1-HTTP协议概念" class="headerlink" title="1. HTTP协议概念"></a>1. HTTP协议概念</h4><p>HTTP协议，即超文本传输协议(Hypertext transfer protocol)。是一种详细规定了浏览器和万维网(WWW = World Wide Web)服务器之间互相通信的规则，通过因特网传送万维网文档的数据传送协议。</p>
 <p>HTTP协议是用于从WWW服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。</p>
 <p>HTTP是一个<strong>应用层协议</strong>，由请求和响应构成，是一个<strong>标准的客户端服务器模型</strong>。HTTP是一个<strong>无状态的协议。</strong></p>
 <p>在Internet中所有的传输都是通过TCP/IP进行的。HTTP协议作为TCP/IP模型中应用层的协议也不例外。HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这个时候，就成了我们常说的HTTPS。</p>
@@ -17,6 +17,8 @@
 <li><p><strong>HTTP 0.9和1.0使用非持续连接</strong>：限制每次连接只处理一个请求，服务器处理完客户的请求，并收到客户的应答后，即断开连接。<strong>HTTP 1.1使用持续连接</strong>：不必为每个web对象创建一个新的连接，一个连接可以传送多个对象，采用这种方式可以节省传输时间。</p>
 </li>
 <li><p><strong>无状态</strong>：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。</p>
+ <a id="more"></a>
+
 <hr>
 <p>协议的状态是指下一次传输可以“记住”这次传输信息的能力。</p>
 <p>http是不会为了下一次连接而维护这次连接所传输的信息,为了保证服务器内存。</p>
@@ -39,7 +41,7 @@
 <h4 id="4-HTTP报文的结构"><a href="#4-HTTP报文的结构" class="headerlink" title="4. HTTP报文的结构"></a>4. HTTP报文的结构</h4><p>HTTP报文分为两类：请求报文（从客户向服务器发送），响应报文（从服务器到客户的应答）</p>
 <p>请求报文和响应报文都是由三部分组成的：开始行、首部行、实体主体</p>
 <p>请求报文和响应报文的区别在于开始行的不同，请求报文的开始行叫请求行，响应报文的开始行叫状态行</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/4717565-230d2f16f093ed91.png?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp" alt="img"><img src="https://images2018.cnblogs.com/blog/1250974/201802/1250974-20180223120728672-2127185812.png" alt="img"></p>
+<p><img src="https://images2018.cnblogs.com/blog/1250974/201802/1250974-20180223120728672-2127185812.png" alt="img"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">HTTP之状态码</span><br><span class="line">状态代码有三位数字组成，第一个数字定义了响应的类别，共分五种类别:</span><br><span class="line">1xx：指示信息--表示请求已接收，继续处理</span><br><span class="line">2xx：成功--表示请求已被成功接收、理解、接受</span><br><span class="line">3xx：重定向--要完成请求必须进行更进一步的操作</span><br><span class="line">4xx：客户端错误--请求有语法错误或请求无法实现</span><br><span class="line">5xx：服务器端错误--服务器未能实现合法的请求</span><br><span class="line"></span><br><span class="line">常见状态码：</span><br><span class="line">200 OK //客户端请求成功</span><br><span class="line">400 Bad Request //客户端请求有语法错误，不能被服务器所理解</span><br><span class="line">401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用</span><br><span class="line">403 Forbidden //服务器收到请求，但是拒绝提供服务</span><br><span class="line">404 Not Found //请求资源不存在，eg：输入了错误的URL</span><br><span class="line">500 Internal Server Error //服务器发生不可预期的错误</span><br><span class="line">503 Server Unavailable //服务器当前不能处理客户端的请求，一段时间后可能恢复正常</span><br></pre></td></tr></table></figure>
 
 <h4 id="5-请求方法"><a href="#5-请求方法" class="headerlink" title="5. 请求方法"></a>5. 请求方法</h4><p>请求方法用来标明客户端希望服务器对资源执行的动作。</p>
@@ -77,7 +79,7 @@
 <p>在网络应用程序设计时，由于TCP/IP的核心内容被封装在操作系统中，如果应用程序要使用TCP/IP，可以通过系统提供的TCP/IP的编程接口来实现。在Windows环境下，网络应用程序编程接口称作Windows Socket。为了支持用户开发面向应用的通信程序，大部分系统都提供了一组基于TCP或者UDP的应用程序编程接口（API），该接口通常以一组函数的形式出现，也称为套接字（Socket）。</p>
 <hr>
 <p>能够唯一标示网络中的进程后，它们就可以利用socket进行通信了，什么是socket呢？我们经常把socket翻译为套接字<strong>，socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。</strong></p>
-<p><img src="https://images0.cnblogs.com/blog/349217/201312/05225723-2ffa89aad91f46099afa530ef8660b20.jpg" alt="img"></p>
+<p><a href="https://s1.ax1x.com/2020/04/16/JAKKYR.jpg" target="_blank" rel="noopener">https://s1.ax1x.com/2020/04/16/JAKKYR.jpg</a></p>
 <p>socket起源于UNIX，在Unix一切皆文件哲学的思想下，socket是一种”打开—读/写—关闭”模式的实现，服务器和客户端各自维护一个”文件”，在建立连接打开后，可以向自己文件写入内容供对方读取或者读取对方内容，通讯结束时关闭文件。</p>
 <h3 id="socket通信流程"><a href="#socket通信流程" class="headerlink" title="socket通信流程"></a>socket通信流程</h3><p>socket是”打开—读/写—关闭”模式的实现，以使用TCP协议通讯的socket为例，其交互流程大概是这样子的</p>
 <p><img src="https://images0.cnblogs.com/blog/349217/201312/05232335-fb19fc7527e944d4845ef40831da4ec2.png" alt="img"></p>
@@ -113,18 +115,18 @@
 <hr>
 <p> <strong>socket编程API</strong></p>
 <p>前面提到socket是”打开—读/写—关闭”模式的实现，简单了解一下socket提供了哪些API供应用程序使用，还是以TCP协议为例，看看Unix下的socket API，其它语言都很类似（PHP甚至名字都几乎一样），这里我就简单解释一下方法作用和参数，具体使用有兴趣同学可以看看博客参考中的链接或者上网搜索</p>
-<ol>
+<ul>
 <li><strong>socket()：创建套接字。</strong></li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int socket(int domain, int type, int protocol);</span><br></pre></td></tr></table></figure>
 
 <p>根据指定的地址族、数据类型和协议来分配一个socket的描述字及其所用的资源。</p>
 <p>domain:协议族，常用的有AF_INET、AF_INET6、AF_LOCAL、AF_ROUTE其中AF_INET代表使用ipv4地址</p>
 <p>type:socket类型，常用的socket类型有，SOCK_STREAM、SOCK_DGRAM、SOCK_RAW、SOCK_PACKET、SOCK_SEQPACKET等</p>
 <p>protocol:协议。常用的协议有，IPPROTO_TCP、IPPTOTO_UDP、IPPROTO_SCTP、IPPROTO_TIPC等</p>
-<ol start="2">
+<ul>
 <li><strong>bind()：指定本地地址。</strong>一个套接字用socket()创建后，它其实还没有与任何特定的本地或目的地址相关联。在很多情况下，应用程序并不关心它们使用的本地地址，这时就可以不用调用bind指定本地的地址，而由协议软件为它们选择一个。但是，在某个知名端口（Well-known Port）上操作的服务器进程必须要对系统指定本地端口。所以一旦创建了一个套接字，服务器就必须使用bind()系统调用为套接字建立一个本地地址。</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</span><br></pre></td></tr></table></figure>
 
 <p>把一个地址族中的特定地址赋给socket</p>
@@ -132,35 +134,35 @@
 <p>addr:要绑定给sockfd的协议地址</p>
 <p>addrlen:地址的长度</p>
 <p><em>通常服务器在启动的时候都会绑定一个众所周知的地址（如ip地址+端口号），用于提供服务，客户就可以通过它来接连服务器；而客户端就不用指定，有系统自动分配一个端口号和自身的ip地址组合。这就是为什么通常服务器端在listen之前会调用bind()，而客户端就不会调用，而是在connect()时由系统随机生成一个。</em></p>
-<ol start="3">
+<ul>
 <li><strong>listen()：设置等待连接状态。</strong>对于一个服务器的程序，当申请到套接字，并调用bind()与本地地址绑定后，就应该等待某个客户机的程序来要求连接。listen()就是把一个套接字设置为这种状态的函数。<strong>同时也可以设置允许的最大连接数</strong></li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int listen(int sockfd, int backlog);</span><br></pre></td></tr></table></figure>
 
 <p>监听socket</p>
 <p>sockfd:要监听的socket描述字</p>
 <p>backlog:相应socket可以排队的最大连接个数 </p>
-<ol start="4">
+<ul>
 <li><strong>connect()：将套接字连接到目的地址。</strong>初始创建的套接字并未与任何外地目的地址关联。客户机可以调用connect()为套接字绑定一个永久的目的地址，将它置于已连接状态。对数据流方式的套接字，必须在传输数据前，调用connect()构造一个与目的地的TCP连接，并在不能构造连接时返回一个差错代码。如果是数据报方式，则不是必须在传输数据前调用connect。如果调用了connect()，也并不像数据流方式那样发送请求建连的报文，而是只在本地存储目的地址，以后该socket上发送的所有数据都送往这个地址，程序员就可以免去为每一次发送数据都指定目的地址的麻烦。</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</span><br></pre></td></tr></table></figure>
 
 <p>连接某个socket</p>
 <p>sockfd:客户端的socket描述字</p>
 <p>addr:服务器的socket地址</p>
 <p>addrlen:socket地址的长度</p>
-<ol start="5">
+<ul>
 <li><strong>accept()：接受连接请求。</strong>服务器进程使用系统调用socket，bind和listen创建一个套接字，将它绑定到知名的端口，并指定连接请求的队列长度。然后，服务器调用accept进入等待状态，直到到达一个连接请求。</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);</span><br></pre></td></tr></table></figure>
 
 <p> TCP服务器监听到客户端请求之后，调用accept()函数取接收请求</p>
 <p>sockfd:服务器的socket描述字</p>
 <p>addr:客户端的socket地址</p>
 <p>addrlen:socket地址的长度</p>
-<ol start="6">
+<ul>
 <li><strong>send()/recv()或write（）/read()：发送和接收数据 。</strong>在数据流方式中，一个连接建立以后，或者在数据报方式下，调用了connect()进行了套接字与目的地址的绑定后，就可以调用send()和reev()函数进行数据传输。</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssize_t read(int fd, void *buf, size_t count);</span><br></pre></td></tr></table></figure>
 
 <p>读取socket内容</p>
@@ -173,9 +175,9 @@
 <p>fd:socket描述字</p>
 <p>buf：缓冲区</p>
 <p>count：缓冲区长度</p>
-<ol start="7">
+<ul>
 <li><strong>close()：关闭套接字。</strong></li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int close(int fd);</span><br></pre></td></tr></table></figure>
 
 <p>socket标记为以关闭 ，使相应socket描述字的引用计数-1，当引用计数为0的时候，触发TCP客户端向服务器发送终止连接请求。</p>

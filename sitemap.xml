@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/20/TinyHttp/</loc>
+    
+    <lastmod>2020-04-16T10:11:17.114Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/05/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
     
     <lastmod>2020-04-16T09:47:26.690Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://yoursite.com/2020/03/15/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%80%9A%E4%BF%A1/</loc>
     
     <lastmod>2020-04-16T09:32:52.656Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/20/TinyHttp/</loc>
-    
-    <lastmod>2020-04-16T09:29:03.225Z</lastmod>
     
   </url>
   

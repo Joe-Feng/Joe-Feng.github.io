@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/04/14/%E6%AD%BB%E9%94%81%20%E6%B4%BB%E9%94%81%20%E9%A5%A5%E9%A5%BF/</loc>
+    <lastmod>2020-04-14</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/14/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2020-04-14</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/17/python%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-02-17</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/09/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2020-02-09</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/08/markdown%20learning/</loc>
+    <lastmod>2020-02-08</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2019/06/08/C-%E5%B0%8F%E9%A1%B9%E7%9B%AE-%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98/</loc>
     <lastmod>2019-06-08</lastmod>
   </url>  <url>
@@ -21,5 +36,14 @@
   </url>  <url>
     <loc>http://yoursite.com/2019/06/08/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-06-08</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/19/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2019-06-01</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/19/%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%AD%A6%E4%B9%A0-%E7%BB%AD/</loc>
+    <lastmod>2019-06-01</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/02/19/%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2019-06-01</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Python学习笔记（二）"><meta name="keywords" content="python"><meta name="author" content="Joe_Feng"><meta name="copyright" content="Joe_Feng"><title>Python学习笔记（二） | Joe's blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#输入输出"><span class="toc-number">1.</span> <span class="toc-text">输入输出</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#print"><span class="toc-number">1.1.</span> <span class="toc-text">print()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#output"><span class="toc-number">1.2.</span> <span class="toc-text">output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-number">1.3.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行与缩进"><span class="toc-number">1.4.</span> <span class="toc-text">行与缩进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多行语句"><span class="toc-number">1.5.</span> <span class="toc-text">多行语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字-Number-类型"><span class="toc-number">1.6.</span> <span class="toc-text">数字(Number)类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串-String"><span class="toc-number">1.7.</span> <span class="toc-text">字符串(String)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空行"><span class="toc-number">1.8.</span> <span class="toc-text">空行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同一行显示多条语句"><span class="toc-number">1.9.</span> <span class="toc-text">同一行显示多条语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多个语句构成代码组"><span class="toc-number">1.10.</span> <span class="toc-text">多个语句构成代码组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import-与-from…import"><span class="toc-number">1.11.</span> <span class="toc-text">import 与 from…import</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="http://tva1.sinaimg.cn/large/0060lm7Tly1g3trl5f8k4j304b04bmx4.jpg"></div><div class="author-info__name text-center">Joe_Feng</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">10</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">5</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://pic1.win4000.com/wallpaper/8/565d5415d62dd.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Joe's blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">个人主页</a><a class="site-page" href="/archives">文章总览</a><a class="site-page" href="/categories/项目实战">项目实战</a><a class="site-page" href="/categories/读书/">读书笔记</a><a class="site-page" href="/categories/生活杂谈">生活杂谈</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Python学习笔记（二）</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-03-06</time><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">1.1k</span><span class="post-meta__separator">|</span><span>阅读时长: 3 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h2 id="print"><a href="#print" class="headerlink" title="print()"></a>print()</h2><p>*<em>你需要确保每一行的第一个字符前面都没有任何空格或制表格 *</em></p>
+<p><strong>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 **<code>end=&quot;&quot;</code></strong>：**</p>
+<p><code>print()</code>函数可以接受多个字符串，用逗号“,”隔开，就可以连成一串输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'The quick brown fox'</span>, <span class="string">'jumps over'</span>, <span class="string">'the lazy dog'</span>)  <span class="comment">#逗号在显示中为空格</span></span><br></pre></td></tr></table></figure>
+
+<p><code>print()</code>会依次打印每个字符串，<strong>遇到逗号“,”会输出一个空格</strong></p>
+<p><code>print()</code>也可以打印整数，或者计算结果:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'100 + 200 ='</span>, <span class="number">100</span> + <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="output"><a href="#output" class="headerlink" title="output"></a>output</h2><p><code>input()</code>，可以让用户输入字符串，并存放到一个变量里。比如输入用户的名字：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = input()</span><br><span class="line">print(name)</span><br></pre></td></tr></table></figure>
+
+<p><code>input()</code>可以让你显示一个字符串来提示用户输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = input(<span class="string">'please enter your name: '</span>)</span><br><span class="line">print(<span class="string">'hello,'</span>, name)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Python中单行注释以 <strong>#</strong> 开头</p>
+<p>多行注释可以用多个 <strong>#</strong> 号，还有 <strong>‘’’</strong> 和 <strong>“””</strong>,可以在三引号之间自由地使用单引号与双引号 </p>
+<hr>
+<h2 id="行与缩进"><a href="#行与缩进" class="headerlink" title="行与缩进"></a>行与缩进</h2><p>python最具特色的就是使用缩进来表示代码块，不需要使用大括号 <strong>{}</strong> 。</p>
+<p>缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。</p>
+<hr>
+<h2 id="多行语句"><a href="#多行语句" class="headerlink" title="多行语句"></a>多行语句</h2><p>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠()来实现多行语句，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">total = item_one + \</span><br><span class="line">        item_two + \</span><br><span class="line">        item_three</span><br></pre></td></tr></table></figure>
+
+<p>在 [], {}, 或 () 中的多行语句，不需要使用反斜杠()，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total = [<span class="string">'item_one'</span>, <span class="string">'item_two'</span>, <span class="string">'item_three'</span>,</span><br><span class="line">        <span class="string">'item_four'</span>, <span class="string">'item_five'</span>]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数字-Number-类型"><a href="#数字-Number-类型" class="headerlink" title="数字(Number)类型"></a>数字(Number)类型</h2><p>python中数字有四种类型：整数、布尔型、浮点数和复数。</p>
+<ul>
+<li><strong>int</strong> (整数),只有一种整数类型 int，没有单独的 long 类型。 int 类型可以指任何大小的整数 </li>
+<li><strong>bool</strong> (布尔), True、False。</li>
+<li><strong>float</strong> (浮点数), 如 1.23、3E-2</li>
+<li><strong>complex</strong> (复数), 如 1 + 2j、 1.1 + 2.2j</li>
+</ul>
+<hr>
+<h2 id="字符串-String"><a href="#字符串-String" class="headerlink" title="字符串(String)"></a>字符串(String)</h2><ul>
+<li><p>python中单引号和双引号使用完全相同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">word = <span class="string">'字符串'</span></span><br><span class="line">sentence = <span class="string">"这是一个句子。"</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>使用三引号(‘’’或”””)可以指定一个多行字符串。例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">paragraph = <span class="string">"""这是一个段落，</span></span><br><span class="line"><span class="string">可以由多行组成"""</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转义符 ‘\‘</p>
+</li>
+<li><p>反斜杠可以用来转义，使用r可以让反斜杠不发生转义。。 如 r”this is a line with \n” 则\n会显示，并不是换行。(r = raw 原，生)</p>
+</li>
+<li><p>按字面意义级联字符串，如”this” “is” “string”会被自动转换为thisisstring。两个字符串之间没有空格</p>
+</li>
+<li><p>字符串可以用 + 运算符连接在一起，用 * 运算符重复。</p>
+</li>
+<li><p>Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</p>
+</li>
+<li><p>Python中的字符串不能改变。</p>
+</li>
+<li><p>Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。</p>
+</li>
+<li><p>字符串的截取的语法格式如下：<strong>变量[头下标:尾下标:步长]</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
+<p>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
+<p><strong>记住：</strong>空行也是程序代码的一部分。</p>
+<hr>
+<h2 id="同一行显示多条语句"><a href="#同一行显示多条语句" class="headerlink" title="同一行显示多条语句"></a>同一行显示多条语句</h2><p>Python可以在同一行中使用多条语句，语句之间使用分号(;)分割</p>
+<hr>
+<h2 id="多个语句构成代码组"><a href="#多个语句构成代码组" class="headerlink" title="多个语句构成代码组"></a>多个语句构成代码组</h2><p>缩进相同的一组语句构成一个代码块，我们称之代码组。</p>
+<p>像if、while、def和class这样的复合语句，<strong>首行以关键字开始，以冒号( : )结束，</strong>该行之后的一行或多行代码构成代码组。</p>
+<p>我们将首行及后面的代码组称为一个子句(clause)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> expression :</span><br><span class="line">	suite</span><br><span class="line"><span class="keyword">elif</span> expressiom :</span><br><span class="line">	suite</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">	suite</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="import-与-from…import"><a href="#import-与-from…import" class="headerlink" title="import 与 from…import"></a>import 与 from…import</h2><ul>
+<li>在 python 用 <strong>import</strong> 或者 <strong>from…import</strong> 来导入相应的模块。</li>
+<li>将整个模块(somemodule)导入，格式为： <strong>import somemodule</strong></li>
+<li>从某个模块中导入某个函数,格式为： <strong>from somemodule import somefunction</strong></li>
+<li>从某个模块中导入多个函数,格式为： <strong>from somemodule import firstfunc, secondfunc, thirdfunc</strong></li>
+<li>将某个模块中的全部函数导入，格式为： <strong>from somemodule import *</strong></li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Joe_Feng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/03/06/Python学习笔记-基本知识/">http://yoursite.com/2020/03/06/Python学习笔记-基本知识/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">Joe's blog</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/03/10/死锁 活锁 饥饿/"><i class="fa fa-chevron-left">  </i><span>死锁 活锁 饥饿</span></a></div><div class="next-post pull-right"><a href="/2020/03/05/Python学习笔记-基本数据类型/"><span>Python学习笔记（一）</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'afa546c23633846e93ae',
+  clientSecret: '364b205cda14b8655b23a2038f1be33e9f3a3fdf',
+  repo: 'Joe-Feng.github.io',
+  owner: 'Joe-Feng',
+  admin: 'Joe-Feng',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(http://pic1.win4000.com/wallpaper/8/565d5415d62dd.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2019 - 2020 By Joe_Feng</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
